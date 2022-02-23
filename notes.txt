@@ -1,0 +1,14 @@
+//deploy 
+make deploy CONTRACT=DappLottery
+
+//set local variable  
+KOVAN_RPC_URL=<nodeurl>
+
+//make contract call (0x28a717d0419c4207bac8acb658ad6b90124a5044 is the contract address)
+ETH_RPC_URL=$KOVAN_RPC_URL seth call 0x28a717d0419c4207bac8acb658ad6b90124a5044 "randomResult()"
+
+//set local variable 
+ETH_FROM=<address>
+
+//contract send transaction (0x28a717d0419c4207bac8acb658ad6b90124a5044 is the contract address)
+ETH_RPC_URL=$KOVAN_RPC_URL ETH_FROM=$ETH_FROM seth call 0x28a717d0419c4207bac8acb658ad6b90124a5044 "startLottery()"
